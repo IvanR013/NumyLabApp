@@ -1,6 +1,7 @@
 import sympy as sp
 import re
 
+
 def preprocesar_funcion(funcion_string): # Maneja palabras que en el lenguaje cotidiano son operadores.
     
     funcion_string = funcion_string.replace('^', 'elevado a la')
@@ -16,12 +17,13 @@ def preprocesar_funcion(funcion_string): # Maneja palabras que en el lenguaje co
     
     return funcion_string
 
+
 def Derivación(funcion_string, var):
     try:
       
         funcion_string = preprocesar_funcion(funcion_string)
       
-        print(f"Función procesada: {funcion_string}")  # Para depuración
+        print(f"Función procesada: {funcion_string}")  # debug
       
         funcion = sp.sympify(funcion_string)
       
@@ -29,17 +31,18 @@ def Derivación(funcion_string, var):
       
         derivar = sp.diff(funcion, var)
       
-        print(f"Derivada calculada: {derivar}")  # Para depuración
+        print(f"Derivada calculada: {derivar}")  # debug
       
         return str(derivar)
     
     except Exception as e:
     
-        return f"Error en derivación: {str(e)}"
+        return f"Error en derivación: {str(e)}" # user
 
 
 
 def Integración(funcion_string, var):
+  
     try:
         funcion_string = preprocesar_funcion(funcion_string)  
        
@@ -51,11 +54,14 @@ def Integración(funcion_string, var):
        
         return str(integrar)
     
+  
     except Exception as e:
+    
     
         return f"Error en integración: {str(e)}"
 
 # Funciones Aritméticas
+
 def Resta(a, b):
    
     return a - b
@@ -86,14 +92,16 @@ def Suma(a, b):
 
 
 
-# Evaluar expresión aritmética
+
 def evaluar_expresion(expresion):
    
     try:
-        # Usar eval para evaluar la expresión aritmética
-        resultado = eval(expresion)
+       
+        
+        resultado = eval(expresion) # correccion de eval
    
         return resultado
+    
     
     except Exception as e:
    

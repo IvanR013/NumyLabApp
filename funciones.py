@@ -2,13 +2,14 @@ from Helpers import *
 from defcalculos import *
 from graficar import mostrar_grafico
 
-
+# Maneja el menu de opciones
 def opcion_seleccionada(app):
     app.limpiar_dinamico_frame()
     opcion_var = app.get_opcion_var()
     seleccion = opcion_var.get()
 
     if seleccion in ["Suma", "Resta", "Division", "Multiplicacion", "Derivación", "Integración", "graficos (sólo funciones)"]:
+       
         textoUser = mostrar_entry(app.get_dinamico_frame())
         boton_calcular,  button_frame = boton_check(app.get_dinamico_frame(), app)
         
@@ -44,15 +45,16 @@ def opcion_seleccionada(app):
     app.opcion_anterior = seleccion
 
 
+# para el calculo diferencial de las librerias
 
 def calcular_derivada(textoUser, app):
     try:
        
-        funcion_string = preprocesar_funcion(textoUser.get())  # Preprocesar la función
+        funcion_string = preprocesar_funcion(textoUser.get()) 
        
-        funcion = sp.sympify(funcion_string)  # Convertir la cadena procesada en una expresión de sympy
+        funcion = sp.sympify(funcion_string)  
         
-        # Realizar la derivación respecto a la variable 'x'
+        
         derivada = sp.diff(funcion, sp.Symbol('x'))
         
         resultado_calculo(app.get_dinamico_frame(), app, derivada)
@@ -65,11 +67,11 @@ def calcular_derivada(textoUser, app):
 
 def calcular_integracion(textoUser, app):
     try:
-        funcion_string = preprocesar_funcion(textoUser.get())  # Preprocesar la función
+        funcion_string = preprocesar_funcion(textoUser.get())  
        
-        funcion = sp.sympify(funcion_string)  # Convertir la cadena procesada en una expresión de sympy
+        funcion = sp.sympify(funcion_string)  
         
-        # Realizar la integración respecto a la variable 'x'
+       
         integracion = sp.integrate(funcion, sp.Symbol('x'))
         
         resultado_calculo(app.get_dinamico_frame(), app, integracion)
@@ -79,6 +81,7 @@ def calcular_integracion(textoUser, app):
         resultado_calculo(app.get_dinamico_frame(), app, f"Error: {str(e)}")
 
 
+# llama a la funcion que parsea y a eval para las aritmeticas.
 
 def calcular_suma(textoUser, app):
     try:
@@ -96,7 +99,7 @@ def calcular_suma(textoUser, app):
 
 def calcular_resta(textoUser, app):
     try:
-        expresion = preprocesar_funcion(textoUser.get())  # Preprocesar la expresión
+        expresion = preprocesar_funcion(textoUser.get())  
     
         resultado = evaluar_expresion(expresion)
     
@@ -110,7 +113,7 @@ def calcular_resta(textoUser, app):
 
 def calcular_division(textoUser, app):
     try:
-        expresion = preprocesar_funcion(textoUser.get())  # Preprocesar la expresión
+        expresion = preprocesar_funcion(textoUser.get())  
    
         resultado = evaluar_expresion(expresion)
    
@@ -125,7 +128,7 @@ def calcular_division(textoUser, app):
 def calcular_multiplicacion(textoUser, app):
     try:
    
-        expresion = preprocesar_funcion(textoUser.get())  # Preprocesar la expresión
+        expresion = preprocesar_funcion(textoUser.get()) 
    
         resultado = evaluar_expresion(expresion)
    

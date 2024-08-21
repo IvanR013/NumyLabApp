@@ -41,15 +41,23 @@ def prueba(frame, app):
 def mostrar_entry(frame):
     textoUser = tk.Entry(frame, width=25)
     textoUser.pack(pady=10, padx=10)
+   
     return textoUser
 
-def resultado_calculo(button_frame, app, resultado=None):
+
+def resultado_calculo(button_frame, app, resultado=None): # te muestra el texto del resultado
+    
     if hasattr(app, 'resultado_label') and app.resultado_label is not None and app.resultado_label.winfo_exists():
+    
         if resultado is not None:
-            app.resultado_label.config(text=f"El resultado es: {resultado}")
+            app.resultado_label.config(text=f"El resultado es: {resultado}")#user
+    
     else:
+        
         if resultado is not None:
-            app.resultado_label = tk.Label(button_frame, text=f"El resultado es: {resultado}")
+            app.resultado_label = tk.Label(button_frame, text=f"El resultado es: {resultado}")#user
             app.resultado_label.pack(pady=10)
+        
         else:
-            print("Label existente, pero no se proporcionó un resultado")
+            
+            print("Label existente, pero no se proporcionó un resultado") # debug
