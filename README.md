@@ -19,6 +19,10 @@ NumyLab es una herramienta matemática simple pero potente, diseñada para estud
 - sympy - Matemáticas simbólicas
 - matplotlib - Librería de gráficos
 
+## Descarga
+
+-  https://drive.google.com/drive/folders/1VVXpeW_szcv46AWgmgnghC6c7byqNgbY?usp=drive_link
+
 ## Contribuir
 Las contribuciones son bienvenidas! Por favor, hacé un fork del repositorio y enviá un pull request con tus mejoras.
 
