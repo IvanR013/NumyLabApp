@@ -12,7 +12,7 @@ NumyLab es una herramienta matemática simple pero potente, diseñada para estud
 
 ## Instalación
 
-### Requisitos Previos
+### Requisitos Previos (Sólo para otros Devs, ya que un usuario puede probar la app normalmente)
 - Python 3.8 o superior
 - Administrador de paquetes `pip`
 - tkinter - Librería para la interfaz gráfica
