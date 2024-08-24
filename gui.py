@@ -6,12 +6,12 @@ class App:
     def __init__(self, GUI):
 
         self.GUI = GUI
-        self.GUI.iconbitmap('assets/n.ico')
+        # self.GUI.iconbitmap('assets/n.ico')
         self.frame = tk.Frame(self.GUI, bg= 'lightblue')
         self.frame.pack(expand=True, fill='both')
 
         # Widgets fijos
-        self.bienvenida = tk.Label(self.frame, bg='lightblue', font=('Sans', 12), text="NumyLab - Fase Beta")
+        self.bienvenida = tk.Label(self.frame, bg='lightblue', font=('Sans', 12), text="- NumyLab - Calculadora y graficadora -")
         self.bienvenida.pack(side="top", pady=10, anchor='n')
         self.mensaje_menu = tk.Label(self.frame, bg='lightblue', font=('Sans', 12), text="Introducí La operación a calcular:")
         self.mensaje_menu.pack()
@@ -65,7 +65,7 @@ class App:
 
 def main():
     GUI = tk.Tk()
-    GUI.title("NumyLab - Beta")
+    GUI.title("NumyLab V1.0")
     GUI.geometry("400x300")
 
     app = App(GUI)
