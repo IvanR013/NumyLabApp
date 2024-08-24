@@ -6,6 +6,7 @@ class App:
     def __init__(self, GUI):
 
         self.GUI = GUI
+        self.GUI.iconbitmap('assets/icconn.ico')
         self.frame = tk.Frame(self.GUI, bg= 'lightblue')
         self.frame.pack(expand=True, fill='both')
 
