@@ -8,7 +8,7 @@ def opcion_seleccionada(app):
     opcion_var = app.get_opcion_var()
     seleccion = opcion_var.get()
 
-    if seleccion in ["Suma", "Resta", "Division", "Multiplicacion", "Derivación", "Integración", "graficos (sólo funciones)"]:
+    if seleccion in ["Operaciones aritméticas (+ - * /)", "Derivación", "Integración Indefinida", "graficos (sólo funciones)"]:
        
         textoUser = mostrar_entry(app.get_dinamico_frame())
         boton_calcular,  button_frame = boton_check(app.get_dinamico_frame(), app)
@@ -17,23 +17,23 @@ def opcion_seleccionada(app):
          
             boton_calcular.config(command=lambda: calcular_derivada(textoUser, app))
        
-        elif seleccion == "Integración":
+        elif seleccion == "Integración Indefinida":
           
             boton_calcular.config(command=lambda: calcular_integracion(textoUser, app))        
       
-        elif seleccion == "Suma":
+        elif seleccion == "Operaciones aritméticas (+ - * /)":
          
             boton_calcular.config(command=lambda: calcular_suma(textoUser, app))        
       
-        elif seleccion == "Resta":
+        elif seleccion == "Operaciones aritméticas (+ - * /)":
           
             boton_calcular.config(command=lambda: calcular_resta(textoUser, app))        
        
-        elif seleccion == "Multiplicacion":
+        elif seleccion == "Operaciones aritméticas (+ - * /)":
            
             boton_calcular.config(command=lambda: calcular_multiplicacion(textoUser, app))        
         
-        elif seleccion == "Division":
+        elif seleccion == "Operaciones aritméticas (+ - * /)":
            
             boton_calcular.config(command=lambda: calcular_division(textoUser, app))        
 
@@ -67,18 +67,25 @@ def calcular_derivada(textoUser, app):
 
 def calcular_integracion(textoUser, app):
     try:
-        funcion_string = preprocesar_funcion(textoUser.get())  
-       
-        funcion = sp.sympify(funcion_string)  
+        # Obtiene y preprocesa la función ingresada por el usuario
+        funcion_string = preprocesar_funcion(textoUser.get())
         
-       
+        # Convierte la cadena de la función en una expresión simbólica
+        funcion = sp.sympify(funcion_string)
+        
+        # Realiza la integración simbólica con respecto a la variable 'x'
         integracion = sp.integrate(funcion, sp.Symbol('x'))
         
-        resultado_calculo(app.get_dinamico_frame(), app, integracion)
+        # Añade la constante de integración 'C' al resultado
+        resultado_final = f"{integracion} + C"
+        
+        # Muestra el resultado en la interfaz de la aplicación
+        resultado_calculo(app.get_dinamico_frame(), app, resultado_final)
     
     except Exception as e:
-    
+        # Muestra el error en la interfaz de la aplicación
         resultado_calculo(app.get_dinamico_frame(), app, f"Error: {str(e)}")
+
 
 
 # llama a la funcion que parsea y a eval para las aritmeticas.

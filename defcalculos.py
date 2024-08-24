@@ -2,17 +2,20 @@ import sympy as sp
 import re
 
 
-def preprocesar_funcion(funcion_string): # Maneja palabras que en el lenguaje cotidiano son operadores.
-    
-    funcion_string = funcion_string.replace('^', 'elevado a la')
+def preprocesar_funcion(funcion_string):
+    # Reemplaza las operaciones cotidianas por operadores matemáticos válidos para SymPy
+    funcion_string = funcion_string.replace('^', '**')
     funcion_string = funcion_string.replace('menos', '-')
     funcion_string = funcion_string.replace('mas', '+')
     funcion_string = funcion_string.replace('por', '*')
     funcion_string = funcion_string.replace('dividido', '/')
-    funcion_string = funcion_string.replace('^', '**')
     funcion_string = funcion_string.replace('al cuadrado', '**2')
     funcion_string = funcion_string.replace('al cubo', '**3')
+    
+    # Insertar multiplicación implícita entre un número y una variable, por ejemplo '2x' -> '2*x'
     funcion_string = re.sub(r'(\d)([a-zA-Z])', r'\1*\2', funcion_string)
+    
+    # Elimina espacios en blanco
     funcion_string = funcion_string.replace(' ', '')
     
     return funcion_string
@@ -42,22 +45,25 @@ def Derivación(funcion_string, var):
 
 
 def Integración(funcion_string, var):
-  
     try:
-        funcion_string = preprocesar_funcion(funcion_string)  
-       
-        funcion = sp.sympify(funcion_string)
-       
+        # Preprocesa la función, si es necesario
+        funcion_string = preprocesar_funcion(funcion_string)
+        
+        # Define la variable simbólica para la integración
         var = sp.Symbol(var)
-       
+        
+        # Convierte la cadena de la función en una expresión simbólica
+        funcion = sp.sympify(funcion_string)
+        
+        # Realiza la integración
         integrar = sp.integrate(funcion, var)
-       
-        return str(integrar)
+        
+        # Añade la constante de integración 'C'
+        resultado_con_constante = f"{integrar} + C"
+        
+        return str(resultado_con_constante)
     
-  
     except Exception as e:
-    
-    
         return f"Error en integración: {str(e)}"
 
 # Funciones Aritméticas
