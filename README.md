@@ -1,4 +1,4 @@
-# NumyLab - INDEV DEMO -
+# NumyLab - V1.0 (Incluye DEMO) -
 
 NumyLab es una herramienta matemática simple pero potente, diseñada para estudiantes y profesionales. Esta aplicación ofrece funcionalidades para resolver ecuaciones, realizar operaciones básicas de cálculo y visualizar funciones a través de una interfaz gráfica intuitiva (GUI).
 
