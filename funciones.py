@@ -2,13 +2,16 @@ from Helpers import *
 from defcalculos import *
 from graficar import mostrar_grafico
 
-# Maneja el menu de opciones
+
 def opcion_seleccionada(app):
+   
     app.limpiar_dinamico_frame()
+   
     opcion_var = app.get_opcion_var()
+   
     seleccion = opcion_var.get()
 
-    if seleccion in ["Operaciones aritméticas (+ - * /)", "Derivación", "Integración Indefinida", "graficos (sólo funciones)"]:
+    if seleccion in ["Operaciones aritméticas (+ - * /)", "Derivación", "Integración Indefinida", "Gráficos (sólo funciones con x)"]:
        
         textoUser = mostrar_entry(app.get_dinamico_frame())
         boton_calcular,  button_frame = boton_check(app.get_dinamico_frame(), app)
@@ -37,7 +40,7 @@ def opcion_seleccionada(app):
            
             boton_calcular.config(command=lambda: calcular_division(textoUser, app))        
 
-        elif seleccion == "graficos (sólo funciones)":
+        elif seleccion == "Gráficos (sólo funciones con x)":
              
             boton_calcular.config(command=lambda: mostrar_grafico(textoUser.get(), 'x', app))
             
@@ -45,7 +48,7 @@ def opcion_seleccionada(app):
     app.opcion_anterior = seleccion
 
 
-# para el calculo diferencial de las librerias
+
 
 def calcular_derivada(textoUser, app):
     try:
@@ -66,32 +69,36 @@ def calcular_derivada(textoUser, app):
 
 
 def calcular_integracion(textoUser, app):
+   
     try:
-        # Obtiene y preprocesa la función ingresada por el usuario
+        
         funcion_string = preprocesar_funcion(textoUser.get())
         
-        # Convierte la cadena de la función en una expresión simbólica
+        
         funcion = sp.sympify(funcion_string)
         
-        # Realiza la integración simbólica con respecto a la variable 'x'
+        
         integracion = sp.integrate(funcion, sp.Symbol('x'))
         
-        # Añade la constante de integración 'C' al resultado
+        
         resultado_final = f"{integracion} + C"
         
-        # Muestra el resultado en la interfaz de la aplicación
+        
         resultado_calculo(app.get_dinamico_frame(), app, resultado_final)
     
     except Exception as e:
-        # Muestra el error en la interfaz de la aplicación
+        
+        
         resultado_calculo(app.get_dinamico_frame(), app, f"Error: {str(e)}")
 
 
 
-# llama a la funcion que parsea y a eval para las aritmeticas.
+
 
 def calcular_suma(textoUser, app):
+
     try:
+
         expresion = preprocesar_funcion(textoUser.get())  # Preprocesar la expresión
     
         resultado = evaluar_expresion(expresion)
@@ -105,6 +112,7 @@ def calcular_suma(textoUser, app):
 
 
 def calcular_resta(textoUser, app):
+
     try:
         expresion = preprocesar_funcion(textoUser.get())  
     
@@ -119,6 +127,7 @@ def calcular_resta(textoUser, app):
 
 
 def calcular_division(textoUser, app):
+
     try:
         expresion = preprocesar_funcion(textoUser.get())  
    
@@ -133,6 +142,7 @@ def calcular_division(textoUser, app):
 
 
 def calcular_multiplicacion(textoUser, app):
+
     try:
    
         expresion = preprocesar_funcion(textoUser.get()) 

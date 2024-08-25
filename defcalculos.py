@@ -3,7 +3,8 @@ import re
 
 
 def preprocesar_funcion(funcion_string):
-    # Reemplaza las operaciones cotidianas por operadores matemáticos válidos para SymPy
+   
+    funcion_string = funcion_string.replace('^', 'elevado al')
     funcion_string = funcion_string.replace('^', '**')
     funcion_string = funcion_string.replace('menos', '-')
     funcion_string = funcion_string.replace('mas', '+')
@@ -12,7 +13,7 @@ def preprocesar_funcion(funcion_string):
     funcion_string = funcion_string.replace('al cuadrado', '**2')
     funcion_string = funcion_string.replace('al cubo', '**3')
     
-    # Insertar multiplicación implícita entre un número y una variable, por ejemplo '2x' -> '2*x'
+   
     funcion_string = re.sub(r'(\d)([a-zA-Z])', r'\1*\2', funcion_string)
     
     # Elimina espacios en blanco
@@ -46,19 +47,19 @@ def Derivación(funcion_string, var):
 
 def Integración(funcion_string, var):
     try:
-        # Preprocesa la función, si es necesario
+     
         funcion_string = preprocesar_funcion(funcion_string)
         
-        # Define la variable simbólica para la integración
+        
         var = sp.Symbol(var)
         
-        # Convierte la cadena de la función en una expresión simbólica
+        
         funcion = sp.sympify(funcion_string)
         
-        # Realiza la integración
+       
         integrar = sp.integrate(funcion, var)
         
-        # Añade la constante de integración 'C'
+        
         resultado_con_constante = f"{integrar} + C"
         
         return str(resultado_con_constante)
@@ -66,7 +67,7 @@ def Integración(funcion_string, var):
     except Exception as e:
         return f"Error en integración: {str(e)}"
 
-# Funciones Aritméticas
+
 
 def Resta(a, b):
    
@@ -103,11 +104,9 @@ def evaluar_expresion(expresion):
    
     try:
        
-        
         resultado = eval(expresion) # correccion de eval
    
         return resultado
-    
     
     except Exception as e:
    

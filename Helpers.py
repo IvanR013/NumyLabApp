@@ -5,10 +5,11 @@ from graficar import mostrar_grafico
 import sympy as sp
 
 def boton_check(frame, app):
-    button_frame = tk.Frame(frame, bg= 'Lightblue')
+  
+    button_frame = tk.Frame(frame, bg= '#1C646D')
     button_frame.pack(pady=5, padx=5)
     
-    boton_calcular = tk.Button(button_frame,font=('Sans', 12) ,text="Calcular", width=10, height=2)
+    boton_calcular = tk.Button(button_frame,text="Calcular", width=10, height=2)
     boton_calcular.pack(side='left', padx=10)
 
 
@@ -19,9 +20,12 @@ def boton_check(frame, app):
 
 
 def prueba(frame, app):
+   
     try:
         textoUser = mostrar_entry(frame)
+       
         funcion_string = preprocesar_funcion(textoUser.get())
+        
         funcion = sp.sympify(funcion_string)
         
         if app.get_opcion_var().get() == "Derivación":
@@ -45,6 +49,7 @@ def prueba(frame, app):
 
 
 def mostrar_entry(frame):
+   
     textoUser = tk.Entry(frame, width=25)
     textoUser.pack(pady=10, padx=10)
    
@@ -61,7 +66,7 @@ def resultado_calculo(button_frame, app, resultado=None): # te muestra el texto 
     else:
         
         if resultado is not None:
-            app.resultado_label = tk.Label(button_frame, bg='lightblue' ,text=f"El resultado es: {resultado}")#user
+            app.resultado_label = tk.Label(button_frame, bg='#1C646D',fg='white' ,text=f"El resultado es: {resultado}")#user
             app.resultado_label.pack(pady=10)
         
         else:
