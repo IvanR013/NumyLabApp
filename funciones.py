@@ -154,3 +154,6 @@ def calcular_multiplicacion(textoUser, app):
     except Exception as e:
    
         resultado_calculo(app.get_dinamico_frame(), app, f"Error: {str(e)}")
+        
+
+

@@ -7,7 +7,7 @@ class App:
     def __init__(self, GUI):
 
         self.GUI = GUI
-        self.GUI.iconbitmap('assets/n.ico')
+        # self.GUI.iconbitmap('assets/n.ico')
         self.frame = tk.Frame(self.GUI, bg= '#1C646D')
         self.frame.pack(expand=True, fill='both')
 
@@ -30,7 +30,7 @@ class App:
         
         self.opcion_var = tk.StringVar(self.frame)
         self.opcion_var.set("Selecciona una operación")
-        opciones = ["Operaciones aritméticas (+ - * /)", "Derivación", "Integración Indefinida", "Gráficos(sólo funciones con x)"]
+        opciones = ["Operaciones aritméticas (+ - * /)", "Derivación", "Integración Indefinida", "Gráficos (sólo funciones con x)"]
         self.opciones_menu = tk.OptionMenu(self.opciones_frame, self.opcion_var, *opciones)
         self.opciones_menu.pack(pady=10, padx=10, fill='x')
 

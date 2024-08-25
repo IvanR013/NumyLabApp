@@ -1,8 +1,9 @@
-
 import tkinter as tk
 from defcalculos import preprocesar_funcion
 from graficar import mostrar_grafico
 import sympy as sp
+
+
 
 def boton_check(frame, app):
   
@@ -54,6 +55,7 @@ def mostrar_entry(frame):
     textoUser.pack(pady=10, padx=10)
    
     return textoUser
+
 
 
 def resultado_calculo(button_frame, app, resultado=None): # te muestra el texto del resultado
