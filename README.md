@@ -20,7 +20,7 @@ NumyLab es una herramienta matemática simple pero potente, diseñada para estud
 - Python 3.8 o superior
 - Administrador de paquetes `pip`
 - tkinter - Librería para la interfaz gráfica
-- sympy - Matemáticas simbólicas
+- sympy - Librería de Álgebra
 - matplotlib - Librería de gráficos
 
 
