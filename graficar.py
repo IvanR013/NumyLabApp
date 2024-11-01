@@ -8,12 +8,16 @@ from defcalculos import preprocesar_funcion
 
 def mostrar_grafico(funcion_string, variable, app):
     
+
     '''
     Si el usuario selecciona la opción de gráficos (y utiliza x como variable de su función), la grafica y ejecuta la ventana con el gráfico aparte. 
     
     '''
     
     from Helpers import resultado_calculo # Para evitar importacion circular.
+
+    from Helpers import resultado_calculo
+
     
     try:
        
