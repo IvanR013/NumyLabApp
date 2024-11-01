@@ -1,16 +1,12 @@
-<<<<<<< HEAD
 '''
 Numylab V1.0 - Desarrollada por Ivan Rodriguez, Aplicación sin firma digital aún.
 
 '''
-=======
->>>>>>> 4dd5500c7e943677f5ece561fdb936b720cce345
 
 import tkinter as tk
 from funciones import opcion_seleccionada
 
 class App:
-<<<<<<< HEAD
     
     '''
     :Documentación en Español: 
@@ -62,10 +58,8 @@ class App:
         - Option menu: Dropdown menu that allows the user to select between various operations.
         - Property Message: Label at the bottom  to show the developer's name (mine  🤝).   
         '''
-=======
 
     def __init__(self, GUI):
->>>>>>> 4dd5500c7e943677f5ece561fdb936b720cce345
 
         self.GUI = GUI
         # self.GUI.iconbitmap('assets/n.ico')
@@ -107,15 +101,12 @@ class App:
 
     def limpiar_dinamico_frame(self):
         
-<<<<<<< HEAD
         '''
         El frame dinámico es el input donde se introduce el texto.
         
         Este método itera sobre el y lo resetea para borrar el contenido.
         '''
         
-=======
->>>>>>> 4dd5500c7e943677f5ece561fdb936b720cce345
         for widget in self.dinamico_frame.winfo_children():
         
             widget.destroy()
@@ -124,48 +115,36 @@ class App:
 
     def get_opcion_var(self):
         
-<<<<<<< HEAD
         '''
         Genera el menú desplegable.
         '''
         
-=======
->>>>>>> 4dd5500c7e943677f5ece561fdb936b720cce345
         return self.opcion_var
 
 
 
     def get_dinamico_frame(self):
-<<<<<<< HEAD
         '''
         Hace aparecer el input de operaciones.
         '''
-=======
->>>>>>> 4dd5500c7e943677f5ece561fdb936b720cce345
         
         return self.dinamico_frame
 
 
 
 def main():
-<<<<<<< HEAD
     
-=======
->>>>>>> 4dd5500c7e943677f5ece561fdb936b720cce345
     GUI = tk.Tk()
     GUI.title("NumyLab V1.0")
     GUI.geometry("400x300")
 
     app = App(GUI)
-<<<<<<< HEAD
     
     GUI.mainloop() # Instancia de APP
 
 if __name__ == "__main__":
     
-=======
     GUI.mainloop()
 
 if __name__ == "__main__":
->>>>>>> 4dd5500c7e943677f5ece561fdb936b720cce345
     main()
