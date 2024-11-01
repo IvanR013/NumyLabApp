@@ -142,9 +142,6 @@ def main():
     
     GUI.mainloop() # Instancia de APP
 
-if __name__ == "__main__":
-    
-    GUI.mainloop()
 
 if __name__ == "__main__":
     main()

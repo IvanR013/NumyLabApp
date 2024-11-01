@@ -6,14 +6,11 @@ import sympy as sp
 
 
 def boton_check(frame, app):
-<<<<<<< HEAD
     
     '''
     Genera el botón de calcular
     
     '''
-=======
->>>>>>> 4dd5500c7e943677f5ece561fdb936b720cce345
   
     button_frame = tk.Frame(frame, bg= '#1C646D')
     button_frame.pack(pady=5, padx=5)
@@ -29,14 +26,11 @@ def boton_check(frame, app):
 
 
 def prueba(frame, app):
-<<<<<<< HEAD
     
     '''
     Función específica para trabajar con las herramientas de cálculo diferencial, ya que las operaciones aritméticas las maneja eval (lamentablemente).
     
     '''
-=======
->>>>>>> 4dd5500c7e943677f5ece561fdb936b720cce345
    
     try:
         textoUser = mostrar_entry(frame)
@@ -66,14 +60,11 @@ def prueba(frame, app):
 
 
 def mostrar_entry(frame):
-<<<<<<< HEAD
     
     '''
     Muestra el input "Entry" en este caso.
     
     '''
-=======
->>>>>>> 4dd5500c7e943677f5ece561fdb936b720cce345
    
     textoUser = tk.Entry(frame, width=25)
     textoUser.pack(pady=10, padx=10)

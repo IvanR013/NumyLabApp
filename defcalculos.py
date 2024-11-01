@@ -77,7 +77,7 @@ def Integración(funcion_string, var):
         return f"Error en integración: {str(e)}"
 
 #Estas funciones estaban pensadas para reemplazar a eval() (Por cuestiones de seguridad), pero fallaron en su intento o generaban mayor tiempo de ejecución.
-        return f"Error en integración: {str(e)}"
+
 
 
 
