@@ -1,6 +1,6 @@
 # NumyLab - V1.0 -
 
-NumyLab es una herramienta matemática simple pero potente, diseñada para estudiantes y profesionales. Esta aplicación ofrece funcionalidades para resolver ecuaciones, realizar operaciones básicas de cálculo y visualizar funciones a través de una interfaz gráfica intuitiva (GUI).
+NumyLab es una herramienta matemática simple pero potente, diseñada para estudiantes y profesionales. Esta aplicación ofrece funcionalidades para resolver ecuaciones, realizar operaciones básicas de cálculo y visualizar funciones a través de una interfaz gráfica intuitiva.
 
 
 ## Características
@@ -17,9 +17,9 @@ NumyLab es una herramienta matemática simple pero potente, diseñada para estud
 
 -  https://drive.google.com/drive/folders/1VVXpeW_szcv46AWgmgnghC6c7byqNgbY?usp=drive_link
 
-## Instalación(Devs)
+## Instalación del repo y librerías necesarias (Devs)
 
-### Requisitos Previos (Sólo para otros Devs, ya que un usuario puede probar la app normalmente)
+### Requisitos Previos (Sólo para otros Devs)
 - Python 3.8 o superior
 - Administrador de paquetes `pip`
 - tkinter - Librería para la interfaz gráfica
